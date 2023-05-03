@@ -1,0 +1,4377 @@
+{
+	"info": {
+		"_postman_id": "f9cbf199-9dd1-461e-9424-9e86af8eb8ee",
+		"name": "Resola Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8363821"
+	},
+	"item": [
+		{
+			"name": "Create App",
+			"item": [
+				{
+					"name": "Positive case",
+					"item": [
+						{
+							"name": "Create App TC_CREATE_APP_01",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_02",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('App');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"App\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_03",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('test app with description');\r",
+											"    pm.expect(data.description).to.eql('app description');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test app with description\",\r\n    \"description\": \"app description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_04",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('test app with description');\r",
+											"    pm.expect(data.description).to.eql('app');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test app with description\",\r\n    \"description\": \"app\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Negative case",
+					"item": [
+						{
+							"name": "Create App TC_CREATE_APP_05",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+											"    pm.expect(data.url).to.eql('/api/v1/app');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test app with description\",\r\n    \"description\": \"app\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app",
+									"host": [
+										"{{BASE_URL}}app"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_06",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.detail;\r",
+											"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+											"    pm.expect(data.url).to.eql('/api/v1/');\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Synalio\",\r\n  \"description\": \"Synalio default for all companies and apps\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}webhooks",
+									"host": [
+										"{{BASE_URL}}webhooks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_07",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+											"    pm.expect(data.url).to.eql('/api/v1/');\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Synalio\",\r\n  \"description\": \"Synalio default for all companies and apps\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}",
+									"host": [
+										"{{BASE_URL}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_08",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+											"    pm.expect(data.url).to.eql('/api/v1/');\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Synalio\",\r\n  \"description\": \"Synalio default for all companies and apps\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_09",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"    pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('must have required property name');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Synalio default for all companies and apps\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_10",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"    pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('invalid name value');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"ap\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_11",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"    pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('invalid name value');\r",
+											"\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"this is an invalid app name because it is too long\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_12",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"    pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('invalid description value');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n  \"name\": \"test app\",\r\n  \"description\": \"de\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_13",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"    pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('invalid description value');\r",
+											"\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n   \"name\": \"test app\",\r\n  \"description\": \"this is a very long description, it should be invalid because it is longer than what is supported, not long enough yet, must have more characters\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_14",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('Route resolved, but no method matched');\r",
+											"    pm.expect(data.url).to.eql('/api/v1/apps');\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create App TC_CREATE_APP_15",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 422\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(422);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.additional;\r",
+											"    pm.expect(responseJson.detail).to.eql('Route resolved, but no method matched');\r",
+											"    pm.expect(data.url).to.eql('/api/v1/apps');\r",
+											"\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test app with description\",\r\n    \"description\": \"app\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get app by ID",
+			"item": [
+				{
+					"name": "Positive case",
+					"item": [
+						{
+							"name": "Get app TC_GET_APP_01",
+							"item": [
+								{
+									"name": "1.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "1.2 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});\r",
+													"\r",
+													"pm.collectionVariables.set(\"appId\", \"\");"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Get app TC_GET_APP_02",
+							"item": [
+								{
+									"name": "2.1 Create App TC_CREATE_APP_03",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    \r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('test app with description');\r",
+													"    pm.expect(data.description).to.eql('app description');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"test app with description\",\r\n    \"description\": \"app description\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2.2 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('test app with description');\r",
+													"    pm.expect(data.description).to.eql('app description');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"\r",
+													"});\r",
+													"\r",
+													"pm.collectionVariables.set(\"appId\", \"\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Negative case",
+					"item": [
+						{
+							"name": "Get app TC_GET_APP_03",
+							"item": [
+								{
+									"name": "3.1 Create App TC_CREATE_APP_03",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('test app with description');\r",
+													"    pm.expect(data.description).to.eql('app description');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"test app with description\",\r\n    \"description\": \"app description\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3.2 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+													"    pm.expect(data.url).to.eql('/api/v1/apps');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_GET_APP_04",
+							"item": [
+								{
+									"name": "4.1 Create App TC_CREATE_APP_03",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    \r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('test app with description');\r",
+													"    pm.expect(data.description).to.eql('app description');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"test app with description\",\r\n    \"description\": \"app description\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "4",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+													"    pm.expect(data.url).to.eql('/api/v1/apps');\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_GET_APP_05",
+							"item": [
+								{
+									"name": "5.1 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const detail = responseJson.detail;\r",
+													"    pm.expect(responseJson.status).to.eql('error');\r",
+													"    pm.expect(detail.type).to.eql('notFound');\r",
+													"    pm.expect(detail.msg).to.eql('notFound');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{nonExistAppId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{nonExistAppId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_GET_APP_06",
+							"item": [
+								{
+									"name": "6.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    \r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "6.2 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+													"    pm.expect(data.url).to.eql('/api/v1/apps');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Update App Detail",
+			"item": [
+				{
+					"name": "Positive case",
+					"item": [
+						{
+							"name": "Get app TC_UPDATE_APP_01",
+							"item": [
+								{
+									"name": "1.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "1.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('updated description 1');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"updated description 1\"\r\n\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_02",
+							"item": [
+								{
+									"name": "2.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    \r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('string');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"description\": \"string\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_03",
+							"item": [
+								{
+									"name": "3.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    \r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('disabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"status\": \"disabled\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_04",
+							"item": [
+								{
+									"name": "4.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    \r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "4.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('updated test app 2');\r",
+													"    pm.expect(data.description).to.eql('updated description');\r",
+													"    pm.expect(data.status).to.eql('disabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"updated test app 2\",\r\n  \"description\": \"updated description\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_05",
+							"item": [
+								{
+									"name": "5.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    \r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "5.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('updated test app 3');\r",
+													"    pm.expect(data.description).to.eql('updated description 1');\r",
+													"    pm.expect(data.status).to.eql('disabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"updated test app 3\",\r\n  \"description\": \"updated description 1\",\r\n  \"status\": \"disabled\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get app TC_UPDATE_APP_06",
+					"item": [
+						{
+							"name": "6.1 Create App TC_CREATE_APP_01",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    \r",
+											"    pm.collectionVariables.set(\"appId\", data.id);\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6.2 Update App TC_UPDATE_APP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"appId\", \"\");\r",
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('hhs');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"hhs\"\r\n\r\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps/{{appId}}",
+									"host": [
+										"{{BASE_URL}}apps"
+									],
+									"path": [
+										"{{appId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get app TC_UPDATE_APP_07",
+					"item": [
+						{
+							"name": "7.1 Create App TC_CREATE_APP_01",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    \r",
+											"    pm.collectionVariables.set(\"appId\", data.id);\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7.2 Update App TC_UPDATE_APP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"appId\", \"\");\r",
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('aps');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"description\": \"aps\"\r\n\r\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps/{{appId}}",
+									"host": [
+										"{{BASE_URL}}apps"
+									],
+									"path": [
+										"{{appId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get app TC_UPDATE_APP_08",
+					"item": [
+						{
+							"name": "8.1 Create App TC_CREATE_APP_01",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    \r",
+											"    pm.collectionVariables.set(\"appId\", data.id);\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "8.2 Update App TC_UPDATE_APP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"appId\", \"\");\r",
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('deleted');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"status\": \"deleted\"\r\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps/{{appId}}",
+									"host": [
+										"{{BASE_URL}}apps"
+									],
+									"path": [
+										"{{appId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get app TC_UPDATE_APP_09",
+					"item": [
+						{
+							"name": "9.1 Create App TC_CREATE_APP_01",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    \r",
+											"    pm.collectionVariables.set(\"appId\", data.id);\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps",
+									"host": [
+										"{{BASE_URL}}apps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.2 Update App TC_UPDATE_APP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"appId\", \"\");\r",
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.expect(pm.response.code).to.eql(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The response has all properties\", () => {\r",
+											"    const responseJson = pm.response.json();\r",
+											"    const data = responseJson.data;\r",
+											"    pm.expect(data.name).to.eql('testApp');\r",
+											"    pm.expect(data.description).to.eql('');\r",
+											"    pm.expect(data.status).to.eql('enabled');\r",
+											"    pm.expect(data.id).to.be.a('string');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, application/xml",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-api-key",
+										"value": "123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}apps/{{appId}}",
+									"host": [
+										"{{BASE_URL}}apps"
+									],
+									"path": [
+										"{{appId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Negative case",
+					"item": [
+						{
+							"name": "Get app TC_GET_APP_05",
+							"item": [
+								{
+									"name": "1.2 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const detail = responseJson.detail;\r",
+													"    pm.expect(responseJson.status).to.eql('error');\r",
+													"    pm.expect(detail.type).to.eql('error');\r",
+													"    pm.expect(detail.msg).to.eql('error');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{nonExistAppId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{nonExistAppId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_GET_APP_06",
+							"item": [
+								{
+									"name": "1.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "1.2 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_10",
+							"item": [
+								{
+									"name": "10.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "10.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"    pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('invalid name value');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"ap\"\r\n\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_11",
+							"item": [
+								{
+									"name": "11.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "11.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"    pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('invalid name value');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"this is an invalid app name because it is too long\"\r\n\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_12",
+							"item": [
+								{
+									"name": "12.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "12.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"    pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('invalid description value');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\"description\": \"de\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_13",
+							"item": [
+								{
+									"name": "13.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "13.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"    pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('invalid description value');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"description\": \"this is a very long description, it should be invalid because it is longer than what is supported, not long enough yet, must have more characters\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_14",
+							"item": [
+								{
+									"name": "14.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "14.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"    pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('invalid status value');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"status\": \"blocked\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_15",
+							"item": [
+								{
+									"name": "15.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "15.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+													"    pm.expect(data.url).to.eql('/api/v1/apps');\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{ \r\n  \"name\": \"test app with description\",\r\n  \"description\": \"app description\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get app TC_UPDATE_APP_16",
+							"item": [
+								{
+									"name": "14.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "14.2 Update App TC_UPDATE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 422\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(422);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.additional;\r",
+													"    pm.expect(responseJson.detail).to.eql('Route not resolved, no path matched');\r",
+													"    pm.expect(data.url).to.eql('/api/v1/apps');\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{ \r\n  \"name\": \"test app with description\",\r\n  \"description\": \"app description\"\r\n}"
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Disable App",
+			"item": [
+				{
+					"name": "Positive case",
+					"item": [
+						{
+							"name": "Disable App TTC_DELETE_APP_01",
+							"item": [
+								{
+									"name": "1.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "1.2 Disable App TC_DELETE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 204\", function () {\r",
+													"    pm.response.to.have.status(204);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create App",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json, application/xml",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "x-api-key",
+														"value": "",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"name\": \"At\",\r\n  \"description\": \"Synalio default for all companies and apps\"\r\n}"
+												},
+												"url": {
+													"raw": "https://stoplight.io/mocks/resola/resola/44175315/api/v1/apps",
+													"protocol": "https",
+													"host": [
+														"stoplight",
+														"io"
+													],
+													"path": [
+														"mocks",
+														"resola",
+														"resola",
+														"44175315",
+														"api",
+														"v1",
+														"apps"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 02 May 2023 16:20:32 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "214"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Ray",
+													"value": "7c119793cd092a8c-LAX"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS,TRACE"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status\": \"error\",\n    \"detail\": [\n        {\n            \"instancePath\": \"/header\",\n            \"schemaPath\": \"#/properties/header/required\",\n            \"keyword\": \"required\",\n            \"params\": {\n                \"missingProperty\": \"x-api-key\"\n            },\n            \"message\": \"must have required property 'x-api-key'\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "1.3 Get app TC_GET_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 404\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const detail = responseJson.detail;\r",
+													"    pm.expect(responseJson.status).to.eql('error');\r",
+													"    pm.expect(detail.type).to.eql('error');\r",
+													"    pm.expect(detail.msg).to.eql('error');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "123",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{appId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{appId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Negative case",
+					"item": [
+						{
+							"name": "Disable App TC_DELETE_APP_02",
+							"item": [
+								{
+									"name": "2.1 Create App TC_CREATE_APP_01",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(201);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const data = responseJson.data;\r",
+													"    pm.collectionVariables.set(\"appId\", data.id);\r",
+													"    \r",
+													"    pm.expect(data.name).to.eql('testApp');\r",
+													"    pm.expect(data.description).to.eql('');\r",
+													"    pm.expect(data.status).to.eql('enabled');\r",
+													"    pm.expect(data.id).to.be.a('string');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"testApp\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps",
+											"host": [
+												"{{BASE_URL}}apps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2.2 Disable App TC_DELETE_APP",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"appId\", \"\");\r",
+													"pm.test(\"Status code is 404\", () => {\r",
+													"  pm.expect(pm.response.code).to.eql(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"The response has all properties\", () => {\r",
+													"    const responseJson = pm.response.json();\r",
+													"    const detail = responseJson.detail;\r",
+													"    pm.expect(responseJson.status).to.eql('error');\r",
+													"    pm.expect(detail.type).to.eql('notFound');\r",
+													"    pm.expect(detail.msg).to.eql('notFound');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json, application/xml",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "x-api-key",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{BASE_URL}}apps/{{nonExistAppId}}",
+											"host": [
+												"{{BASE_URL}}apps"
+											],
+											"path": [
+												"{{nonExistAppId}}"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create App",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json, application/xml",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "x-api-key",
+														"value": "",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"name\": \"At\",\r\n  \"description\": \"Synalio default for all companies and apps\"\r\n}"
+												},
+												"url": {
+													"raw": "https://stoplight.io/mocks/resola/resola/44175315/api/v1/apps",
+													"protocol": "https",
+													"host": [
+														"stoplight",
+														"io"
+													],
+													"path": [
+														"mocks",
+														"resola",
+														"resola",
+														"44175315",
+														"api",
+														"v1",
+														"apps"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 02 May 2023 16:20:32 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "214"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Ray",
+													"value": "7c119793cd092a8c-LAX"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS,TRACE"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status\": \"error\",\n    \"detail\": [\n        {\n            \"instancePath\": \"/header\",\n            \"schemaPath\": \"#/properties/header/required\",\n            \"keyword\": \"required\",\n            \"params\": {\n                \"missingProperty\": \"x-api-key\"\n            },\n            \"message\": \"must have required property 'x-api-key'\"\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 600ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(600);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://stoplight.io/mocks/resola/resola/44175315/api/v1/",
+			"type": "string"
+		},
+		{
+			"key": "appId",
+			"value": ""
+		},
+		{
+			"key": "nonExistAppId",
+			"value": "123456789abcdefghijklmn",
+			"type": "string"
+		}
+	]
+}
